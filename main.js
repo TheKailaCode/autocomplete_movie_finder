@@ -11,6 +11,7 @@ $(document).ready(function () {
                     }
                 }))
             response(data)
+            //console.log(response)
         },
         minLength: 2,
         select: function (event, ui) {
@@ -20,11 +21,10 @@ $(document).ready(function () {
                 .then(result => {
                     $('#cast').empty()
                     result.cast.forEach(cast => {
-                        $(cast).append(`<li>${cast}</li>`)
+                        $("#cast").append(`<li>${cast}</li>`)
                     })
                     $('img').attr('src', result.poster)
                 })
         }
-
     })
 })
